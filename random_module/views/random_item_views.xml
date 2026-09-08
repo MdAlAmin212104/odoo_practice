@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_random_item_tree" model="ir.ui.view">
+        <field name="name">random.item.tree</field>
+        <field name="model">random.item</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="quantity"/>
+                <field name="price"/>
+                <field name="is_active"/>
+                <field name="created_on"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_random_item_form" model="ir.ui.view">
+        <field name="name">random.item.form</field>
+        <field name="model">random.item</field>
+        <field name="arch" type="xml">
+            <form string="Random Item">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="quantity"/>
+                        <field name="price"/>
+                        <field name="is_active"/>
+                        <field name="created_on"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_random_item" model="ir.actions.act_window">
+        <field name="name">Random Items</field>
+        <field name="res_model">random.item</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_random_module_root" name="Random Module"/>
+    <menuitem id="menu_random_item" name="Random Items" parent="menu_random_module_root" action="action_random_item"/>
+</odoo>

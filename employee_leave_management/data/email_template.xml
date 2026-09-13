@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="leave_submission_email_template" model="mail.template">
+        <field name="name">Leave Submitted</field>
+        <field name="model_id" ref="model_employee_leave_request"/>
+        <field name="subject">Leave Request Submitted - {{ object.name }}</field>
+        <field name="email_from">{{ object.employee_id.work_email }}</field>
+        <field name="email_to">{{ object.manager_id.work_email or object.employee_id.work_email }}</field>
+        <field name="body_html"><![CDATA[
+            <p>Dear <t t-out="object.manager_id.name or object.employee_id.name"/>,</p>
+            <p><t t-out="object.employee_id.name"/> has submitted a leave request.</p>
+            <p><strong>Request:</strong> <t t-out="object.name"/></p>
+            <p><strong>Leave Type:</strong> <t t-out="object.leave_type_id.name"/></p>
+            <p><strong>Dates:</strong> <t t-out="object.start_date"/> to <t t-out="object.end_date"/></p>
+            <p><strong>Days:</strong> <t t-out="object.number_of_days"/></p>
+            <p>Please review and approve or reject it.</p>
+        ]]></field>
+    </record>
+
+    <record id="leave_manager_approved_email_template" model="mail.template">
+        <field name="name">Manager Approved Leave</field>
+        <field name="model_id" ref="model_employee_leave_request"/>
+        <field name="subject">Your leave request was approved by manager - {{ object.name }}</field>
+        <field name="email_to">{{ object.employee_id.work_email }}</field>
+        <field name="body_html"><![CDATA[
+            <p>Dear <t t-out="object.employee_id.name"/>,</p>
+            <p>Your leave request has been approved by your manager.</p>
+            <p><strong>Request:</strong> <t t-out="object.name"/></p>
+            <p><strong>Dates:</strong> <t t-out="object.start_date"/> to <t t-out="object.end_date"/></p>
+            <p><strong>Status:</strong> Manager Approved</p>
+        ]]></field>
+    </record>
+
+    <record id="leave_hr_approved_email_template" model="mail.template">
+        <field name="name">HR Approved Leave</field>
+        <field name="model_id" ref="model_employee_leave_request"/>
+        <field name="subject">Your leave request is fully approved - {{ object.name }}</field>
+        <field name="email_to">{{ object.employee_id.work_email }}</field>
+        <field name="body_html"><![CDATA[
+            <p>Dear <t t-out="object.employee_id.name"/>,</p>
+            <p>Your leave request has been approved by HR.</p>
+            <p><strong>Request:</strong> <t t-out="object.name"/></p>
+            <p><strong>Dates:</strong> <t t-out="object.start_date"/> to <t t-out="object.end_date"/></p>
+            <p><strong>Status:</strong> HR Approved</p>
+        ]]></field>
+    </record>
+
+    <record id="leave_rejected_email_template" model="mail.template">
+        <field name="name">Leave Rejected</field>
+        <field name="model_id" ref="model_employee_leave_request"/>
+        <field name="subject">Your leave request has been rejected - {{ object.name }}</field>
+        <field name="email_to">{{ object.employee_id.work_email }}</field>
+        <field name="body_html"><![CDATA[
+            <p>Dear <t t-out="object.employee_id.name"/>,</p>
+            <p>Your leave request was rejected.</p>
+            <p><strong>Request:</strong> <t t-out="object.name"/></p>
+            <p><strong>Reason:</strong> <t t-out="object.manager_comment or object.hr_comment"/></p>
+            <p><strong>Status:</strong> Rejected</p>
+        ]]></field>
+    </record>
+</odoo>

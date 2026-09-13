@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_leave_request_list" model="ir.ui.view">
+        <field name="name">employee.leave.request.list</field>
+        <field name="model">employee.leave.request</field>
+        <field name="arch" type="xml">
+            <list decoration-info="state == 'draft'" decoration-warning="state == 'submitted'" decoration-success="state in ['manager_approved', 'hr_approved']" decoration-danger="state == 'rejected'">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="leave_type_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="number_of_days"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_employee_leave_request_form" model="ir.ui.view">
+        <field name="name">employee.leave.request.form</field>
+        <field name="model">employee.leave.request</field>
+        <field name="arch" type="xml">
+            <form string="Leave Request">
+                <header>
+                    <button name="action_submit" type="object" string="Submit" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_manager_approve" type="object" string="Manager Approve" class="btn-primary" invisible="state != 'submitted'"/>
+                    <button name="action_hr_approve" type="object" string="HR Approve" class="btn-primary" invisible="state != 'manager_approved'"/>
+                    <button name="action_reject" type="object" string="Reject" class="btn-danger" invisible="state not in ['submitted', 'manager_approved']"/>
+                    <button name="action_cancel" type="object" string="Cancel" class="btn-secondary" invisible="state not in ['draft', 'submitted', 'manager_approved']"/>
+                    <button name="action_reset_to_draft" type="object" string="Reset to Draft" class="btn-secondary" invisible="state not in ['rejected', 'cancelled']"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,submitted,manager_approved,hr_approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="department_id"/>
+                            <field name="manager_id"/>
+                            <field name="leave_type_id"/>
+                        </group>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="number_of_days" readonly="1"/>
+                            <field name="remaining_leave_balance" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Leave Details">
+                            <group>
+                                <field name="reason"/>
+                            </group>
+                        </page>
+                        <page string="Approval Information">
+                            <group>
+                                <field name="manager_comment"/>
+                                <field name="hr_comment"/>
+                                <field name="approved_date"/>
+                                <field name="rejected_date"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    
+    <record id="view_employee_leave_request_search" model="ir.ui.view">
+        <field name="name">employee.leave.request.search</field>
+        <field name="model">employee.leave.request</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="leave_type_id"/>
+                <field name="department_id"/>
+                <field name="state"/>
+                <field name="start_date"/>
+                <separator/>
+                <filter string="My Requests" name="my_requests" domain="[('user_id', '=', uid)]"/>
+                <filter string="Pending Approval" name="pending_approval" domain="[('state', 'in', ['submitted', 'manager_approved'])]"/>
+                <filter string="Approved" name="approved" domain="[('state', 'in', ['manager_approved', 'hr_approved'])]"/>
+                <filter string="Rejected" name="rejected" domain="[('state', '=', 'rejected')]"/>
+                <group expand="1" string="Group By">
+                    <filter string="Employee" name="group_by_employee" context="{'group_by': 'employee_id'}"/>
+                    <filter string="Department" name="group_by_department" context="{'group_by': 'department_id'}"/>
+                    <filter string="Leave Type" name="group_by_leave_type" context="{'group_by': 'leave_type_id'}"/>
+                    <filter string="Status" name="group_by_state" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    
+</odoo>

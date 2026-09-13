@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="demo_department_hr" model="hr.department">
+        <field name="name">Human Resources</field>
+    </record>
+
+    <record id="demo_department_it" model="hr.department">
+        <field name="name">IT</field>
+    </record>
+
+    <record id="demo_employee_ali" model="hr.employee">
+        <field name="name">Ali Hassan</field>
+        <field name="employee_code">EMP-001</field>
+        <field name="department_id" ref="demo_department_it"/>
+        <field name="work_email">ali@example.com</field>
+        <field name="work_phone">+123456789</field>
+        <field name="job_position">Software Developer</field>
+        <field name="joining_date">2024-01-15</field>
+    </record>
+
+    <record id="demo_employee_maria" model="hr.employee">
+        <field name="name">Maria Gomez</field>
+        <field name="employee_code">EMP-002</field>
+        <field name="department_id" ref="demo_department_hr"/>
+        <field name="work_email">maria@example.com</field>
+        <field name="work_phone">+123456788</field>
+        <field name="job_position">HR Specialist</field>
+        <field name="joining_date">2023-10-01</field>
+        <field name="manager_id" ref="demo_employee_ali"/>
+    </record>
+
+    <record id="demo_leave_balance_ali_annual" model="employee.leave.balance">
+        <field name="employee_id" ref="demo_employee_ali"/>
+        <field name="leave_type_id" ref="leave_type_annual"/>
+        <field name="year">2026</field>
+        <field name="total_days">20</field>
+        <field name="used_days">3</field>
+    </record>
+</odoo>

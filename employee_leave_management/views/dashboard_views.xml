@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_leave_dashboard" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">employee.leave.request</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+
+    <record id="action_leave_request_my" model="ir.actions.act_window">
+        <field name="name">My Requests</field>
+        <field name="res_model">employee.leave.request</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('user_id', '=', uid)]</field>
+    </record>
+
+    <record id="action_leave_request_pending" model="ir.actions.act_window">
+        <field name="name">Pending Approval</field>
+        <field name="res_model">employee.leave.request</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('state', 'in', ['submitted', 'manager_approved'])]</field>
+    </record>
+
+    <record id="action_leave_request_all" model="ir.actions.act_window">
+        <field name="name">All Requests</field>
+        <field name="res_model">employee.leave.request</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_leave_type" model="ir.actions.act_window">
+        <field name="name">Leave Types</field>
+        <field name="res_model">employee.leave.type</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_leave_balance" model="ir.actions.act_window">
+        <field name="name">Leave Balances</field>
+        <field name="res_model">employee.leave.balance</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_leave_report" model="ir.actions.report">
+        <field name="name">Leave Report</field>
+        <field name="model">employee.leave.request</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">employee_leave_management.leave_request_report</field>
+        <field name="report_file">employee_leave_management.leave_request_report</field>
+        <field name="binding_model_id" ref="model_employee_leave_request"/>
+    </record>
+</odoo>

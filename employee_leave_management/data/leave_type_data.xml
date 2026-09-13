@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="leave_type_annual" model="employee.leave.type">
+        <field name="name">Annual Leave</field>
+        <field name="code">ANNUAL</field>
+        <field name="description">Annual paid leave for employees.</field>
+        <field name="max_days">20.0</field>
+        <field name="requires_manager_approval">True</field>
+        <field name="requires_hr_approval">True</field>
+        <field name="paid">True</field>
+        <field name="active">True</field>
+        <field name="color">1</field>
+    </record>
+
+    <record id="leave_type_sick" model="employee.leave.type">
+        <field name="name">Sick Leave</field>
+        <field name="code">SICK</field>
+        <field name="description">Leave for illness or medical reasons.</field>
+        <field name="max_days">10.0</field>
+        <field name="requires_manager_approval">True</field>
+        <field name="requires_hr_approval">False</field>
+        <field name="paid">True</field>
+        <field name="active">True</field>
+        <field name="color">2</field>
+    </record>
+
+    <record id="leave_type_casual" model="employee.leave.type">
+        <field name="name">Casual Leave</field>
+        <field name="code">CASUAL</field>
+        <field name="description">Short duration personal leave.</field>
+        <field name="max_days">7.0</field>
+        <field name="requires_manager_approval">True</field>
+        <field name="requires_hr_approval">False</field>
+        <field name="paid">True</field>
+        <field name="active">True</field>
+        <field name="color">3</field>
+    </record>
+
+    <record id="leave_type_emergency" model="employee.leave.type">
+        <field name="name">Emergency Leave</field>
+        <field name="code">EMERGENCY</field>
+        <field name="description">Emergency leave for urgent personal matters.</field>
+        <field name="max_days">5.0</field>
+        <field name="requires_manager_approval">True</field>
+        <field name="requires_hr_approval">True</field>
+        <field name="paid">False</field>
+        <field name="active">True</field>
+        <field name="color">4</field>
+    </record>
+</odoo>

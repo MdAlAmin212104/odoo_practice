@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_leave_request_employee,employee.leave.request.employee,model_employee_leave_request,group_leave_employee,1,1,1,1
+access_employee_leave_request_manager,employee.leave.request.manager,model_employee_leave_request,group_leave_manager,1,1,1,0
+access_employee_leave_request_hr,employee.leave.request.hr,model_employee_leave_request,group_leave_hr,1,1,1,1
+access_employee_leave_type_employee,employee.leave.type.employee,model_employee_leave_type,group_leave_employee,1,0,0,0
+access_employee_leave_type_manager,employee.leave.type.manager,model_employee_leave_type,group_leave_manager,1,0,0,0
+access_employee_leave_type_hr,employee.leave.type.hr,model_employee_leave_type,group_leave_hr,1,1,1,1
+access_employee_leave_balance_employee,employee.leave.balance.employee,model_employee_leave_balance,group_leave_employee,1,0,0,0
+access_employee_leave_balance_manager,employee.leave.balance.manager,model_employee_leave_balance,group_leave_manager,1,1,0,0
+access_employee_leave_balance_hr,employee.leave.balance.hr,model_employee_leave_balance,group_leave_hr,1,1,1,1
+access_employee_leave_rejection_wizard_user,employee.leave.rejection.wizard.user,model_employee_leave_rejection_wizard,group_leave_manager,1,1,1,0
+access_employee_leave_rejection_wizard_hr,employee.leave.rejection.wizard.hr,model_employee_leave_rejection_wizard,group_leave_hr,1,1,1,0

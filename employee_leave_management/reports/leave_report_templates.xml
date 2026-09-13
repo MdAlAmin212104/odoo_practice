@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="leave_request_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Leave Request Report</h2>
+                        <table class="table table-sm">
+                            <tr>
+                                <td><strong>Request Number</strong></td>
+                                <td><span t-field="doc.name"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Employee</strong></td>
+                                <td><span t-field="doc.employee_id"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Department</strong></td>
+                                <td><span t-field="doc.department_id"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Leave Type</strong></td>
+                                <td><span t-field="doc.leave_type_id"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Start Date</strong></td>
+                                <td><span t-field="doc.start_date"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>End Date</strong></td>
+                                <td><span t-field="doc.end_date"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Number of Days</strong></td>
+                                <td><span t-field="doc.number_of_days"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Status</strong></td>
+                                <td><span t-field="doc.state"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reason</strong></td>
+                                <td><span t-field="doc.reason"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Manager</strong></td>
+                                <td><span t-field="doc.manager_id"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Manager Comment</strong></td>
+                                <td><span t-field="doc.manager_comment"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>HR Comment</strong></td>
+                                <td><span t-field="doc.hr_comment"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

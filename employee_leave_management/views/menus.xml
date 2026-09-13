@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="menu_leave_management_root" name="Leave Management" sequence="10"/>
+    <menuitem id="menu_leave_management_root" name="Leave Management" sequence="10" web_icon="hr,static/description/icon.png"/>
 
     <menuitem id="menu_leave_management_dashboard" name="Dashboard" parent="menu_leave_management_root" sequence="1" action="action_leave_dashboard"/>
 

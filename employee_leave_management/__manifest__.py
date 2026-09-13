@@ -1,5 +1,5 @@
 {
-    "name": "Employee Leave Management",
+    "name": "Leave Management",
     "summary": "A complete employee leave management module for Odoo 18/19",
     "version": "19.0.1.0.0",
     "license": "LGPL-3",

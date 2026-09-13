@@ -7,6 +7,7 @@
 
     <record id="group_leave_employee" model="res.groups">
         <field name="name">Employee</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
     </record>
 
     <record id="group_leave_manager" model="res.groups">
@@ -17,6 +18,14 @@
     <record id="group_leave_hr" model="res.groups">
         <field name="name">HR</field>
         <field name="implied_ids" eval="[(4, ref('group_leave_manager'))]"/>
+    </record>
+
+    <record id="base.group_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_leave_employee'))]"/>
+    </record>
+
+    <record id="base.group_system" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_leave_hr'))]"/>
     </record>
 
     <record id="rule_leave_request_employee_own" model="ir.rule">

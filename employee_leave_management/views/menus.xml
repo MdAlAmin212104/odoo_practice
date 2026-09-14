@@ -1,18 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="menu_leave_management_root" name="Leave Management" sequence="10" web_icon="hr,static/description/icon.png"/>
+    <menuitem
+        id="menu_leave_management_root"
+        name="Leave Management"
+        sequence="10"
+        web_icon="hr,static/description/icon.png"
+    />
 
-    <menuitem id="menu_leave_management_dashboard" name="Dashboard" parent="menu_leave_management_root" sequence="1" action="action_leave_dashboard"/>
+    <menuitem id="menu_leave_management_dashboard"
+        name="Dashboard"
+        parent="menu_leave_management_root"
+        sequence="1"
+        action="action_leave_dashboard"
+    />
 
-    <menuitem id="menu_leave_management_requests" name="Leave Requests" parent="menu_leave_management_root" sequence="2"/>
-    <menuitem id="menu_leave_requests_my" name="My Requests" parent="menu_leave_management_requests" action="action_leave_request_my" sequence="1"/>
-    <menuitem id="menu_leave_requests_pending" name="Pending Approval" parent="menu_leave_management_requests" action="action_leave_request_pending" sequence="2"/>
-    <menuitem id="menu_leave_requests_all" name="All Requests" parent="menu_leave_management_requests" action="action_leave_request_all" sequence="3"/>
+    <menuitem id="menu_leave_management_requests"
+        name="Leave Requests"
+        parent="menu_leave_management_root"
+        sequence="2"
+    />
 
-    <menuitem id="menu_leave_management_configuration" name="Leave Configuration" parent="menu_leave_management_root" sequence="3"/>
-    <menuitem id="menu_leave_types" name="Leave Types" parent="menu_leave_management_configuration" action="action_leave_type" sequence="1"/>
-    <menuitem id="menu_leave_balances" name="Leave Balances" parent="menu_leave_management_configuration" action="action_leave_balance" sequence="2"/>
 
-    <menuitem id="menu_leave_management_reports" name="Reports" parent="menu_leave_management_root" sequence="4"/>
-    <menuitem id="menu_leave_report" name="Leave Report" parent="menu_leave_management_reports" action="action_leave_report" sequence="1"/>
+    <menuitem id="menu_leave_requests_my"
+        name="My Requests"
+        parent="menu_leave_management_requests"
+        action="action_leave_request_my"
+        sequence="1" />
+    <menuitem id="menu_leave_requests_pending"
+        name="Pending Approval"
+        parent="menu_leave_management_requests"
+        action="action_leave_request_pending"
+        sequence="2" />
+    <menuitem id="menu_leave_requests_all"
+        name="All Requests"
+        parent="menu_leave_management_requests"
+        action="action_leave_request_all"
+        sequence="3" />
+
+    <menuitem id="menu_leave_management_configuration"
+        name="Leave Configuration"
+        parent="menu_leave_management_root"
+        sequence="3" />
+    <menuitem id="menu_leave_types"
+        name="Leave Types"
+        parent="menu_leave_management_configuration"
+        action="action_leave_type"
+        sequence="1" />
+    <menuitem id="menu_leave_balances"
+        name="Leave Balances"
+        parent="menu_leave_management_configuration"
+        action="action_leave_balance"
+        sequence="2" />
+
+    <menuitem id="menu_leave_management_reports"
+        name="Reports"
+        parent="menu_leave_management_root"
+        sequence="4" />
+    <menuitem id="menu_leave_report"
+        name="Leave Report"
+        parent="menu_leave_management_reports"
+        action="action_leave_report"
+        sequence="1" />
 </odoo>

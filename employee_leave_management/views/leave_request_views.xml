@@ -71,7 +71,39 @@
         </field>
     </record>
 
-    
+    <record id="view_employee_leave_request_kanban" model="ir.ui.view">
+        <field name="name">employee.leave.request.kanban</field>
+        <field name="model">employee.leave.request</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" class="o_kanban_small_column">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="leave_type_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="number_of_days"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="d-flex justify-content-between fw-bold mb-1">
+                            <span><field name="name"/></span>
+                            <field name="state" widget="label_selection" options="{'classes': {'draft': 'default', 'submitted': 'warning', 'manager_approved': 'info', 'hr_approved': 'success', 'rejected': 'danger', 'cancelled': 'secondary'}}"/>
+                        </div>
+                        <div class="text-muted mb-1">
+                            <i class="fa fa-user me-1"/> <field name="employee_id"/>
+                        </div>
+                        <div class="mb-1">
+                            <i class="fa fa-tag me-1"/> <field name="leave_type_id"/>
+                        </div>
+                        <div class="small text-secondary">
+                            <i class="fa fa-calendar me-1"/> <field name="start_date"/> - <field name="end_date"/> (<field name="number_of_days"/> days)
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
     <record id="view_employee_leave_request_search" model="ir.ui.view">
         <field name="name">employee.leave.request.search</field>
         <field name="model">employee.leave.request</field>

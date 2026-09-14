@@ -165,11 +165,12 @@ class EmployeeLeaveRequest(models.Model):
             if overlapping:
                 raise ValidationError("The employee already has an overlapping approved or submitted leave request.")
 
-    @api.model
-    def create(self, vals):
-        if vals.get("name", "/") == "/":
-            vals["name"] = self.env["ir.sequence"].next_by_code("employee.leave.request") or "/"
-        return super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get("name", "/") == "/":
+                vals["name"] = self.env["ir.sequence"].next_by_code("employee.leave.request") or "/"
+        return super().create(vals_list)
 
     def action_submit(self):
         for record in self:

@@ -20,10 +20,9 @@
         "wizard_views/leave_rejection_wizard_views.xml",
         "reports/leave_report.xml",
         "reports/leave_report_templates.xml",
-    ],
-    "demo": [
         "demo/demo.xml",
     ],
+    "demo": [],
     "installable": True,
     "application": True,
     "auto_install": False,

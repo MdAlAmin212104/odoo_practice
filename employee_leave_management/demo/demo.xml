@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- Departments -->
     <record id="demo_department_hr" model="hr.department">
         <field name="name">Human Resources</field>
     </record>
 
     <record id="demo_department_it" model="hr.department">
-        <field name="name">IT</field>
+        <field name="name">IT &amp; Software Development</field>
     </record>
 
+    <record id="demo_department_finance" model="hr.department">
+        <field name="name">Finance &amp; Accounts</field>
+    </record>
+
+    <record id="demo_department_sales" model="hr.department">
+        <field name="name">Sales &amp; Marketing</field>
+    </record>
+
+    <!-- Employees -->
     <record id="demo_employee_ali" model="hr.employee">
         <field name="name">Ali Hassan</field>
         <field name="employee_code">EMP-001</field>
         <field name="department_id" ref="demo_department_it"/>
-        <field name="work_email">ali@example.com</field>
-        <field name="work_phone">+123456789</field>
-        <field name="job_position">Software Developer</field>
+        <field name="work_email">ali.hassan@example.com</field>
+        <field name="work_phone">+8801700000001</field>
+        <field name="job_position">Senior Software Engineer</field>
         <field name="joining_date">2024-01-15</field>
     </record>
 
@@ -22,13 +32,45 @@
         <field name="name">Maria Gomez</field>
         <field name="employee_code">EMP-002</field>
         <field name="department_id" ref="demo_department_hr"/>
-        <field name="work_email">maria@example.com</field>
-        <field name="work_phone">+123456788</field>
-        <field name="job_position">HR Specialist</field>
+        <field name="work_email">maria.gomez@example.com</field>
+        <field name="work_phone">+8801700000002</field>
+        <field name="job_position">HR Executive</field>
         <field name="joining_date">2023-10-01</field>
         <field name="manager_id" ref="demo_employee_ali"/>
     </record>
 
+    <record id="demo_employee_tanvir" model="hr.employee">
+        <field name="name">Tanvir Ahmed</field>
+        <field name="employee_code">EMP-003</field>
+        <field name="department_id" ref="demo_department_it"/>
+        <field name="work_email">tanvir.ahmed@example.com</field>
+        <field name="work_phone">+8801700000003</field>
+        <field name="job_position">Frontend Developer</field>
+        <field name="joining_date">2024-03-01</field>
+        <field name="manager_id" ref="demo_employee_ali"/>
+    </record>
+
+    <record id="demo_employee_nusrat" model="hr.employee">
+        <field name="name">Nusrat Jahan</field>
+        <field name="employee_code">EMP-004</field>
+        <field name="department_id" ref="demo_department_finance"/>
+        <field name="work_email">nusrat.jahan@example.com</field>
+        <field name="work_phone">+8801700000004</field>
+        <field name="job_position">Accounts Officer</field>
+        <field name="joining_date">2023-06-15</field>
+    </record>
+
+    <record id="demo_employee_rahat" model="hr.employee">
+        <field name="name">Rahat Chowdhury</field>
+        <field name="employee_code">EMP-005</field>
+        <field name="department_id" ref="demo_department_sales"/>
+        <field name="work_email">rahat.chowdhury@example.com</field>
+        <field name="work_phone">+8801700000005</field>
+        <field name="job_position">Sales Manager</field>
+        <field name="joining_date">2022-11-01</field>
+    </record>
+
+    <!-- Leave Balances (Year 2026) -->
     <record id="demo_leave_balance_ali_annual" model="employee.leave.balance">
         <field name="employee_id" ref="demo_employee_ali"/>
         <field name="leave_type_id" ref="leave_type_annual"/>
@@ -36,4 +78,127 @@
         <field name="total_days">20</field>
         <field name="used_days">3</field>
     </record>
+
+    <record id="demo_leave_balance_ali_sick" model="employee.leave.balance">
+        <field name="employee_id" ref="demo_employee_ali"/>
+        <field name="leave_type_id" ref="leave_type_sick"/>
+        <field name="year">2026</field>
+        <field name="total_days">10</field>
+        <field name="used_days">1</field>
+    </record>
+
+    <record id="demo_leave_balance_ali_casual" model="employee.leave.balance">
+        <field name="employee_id" ref="demo_employee_ali"/>
+        <field name="leave_type_id" ref="leave_type_casual"/>
+        <field name="year">2026</field>
+        <field name="total_days">7</field>
+        <field name="used_days">2</field>
+    </record>
+
+    <record id="demo_leave_balance_maria_annual" model="employee.leave.balance">
+        <field name="employee_id" ref="demo_employee_maria"/>
+        <field name="leave_type_id" ref="leave_type_annual"/>
+        <field name="year">2026</field>
+        <field name="total_days">20</field>
+        <field name="used_days">5</field>
+    </record>
+
+    <record id="demo_leave_balance_maria_sick" model="employee.leave.balance">
+        <field name="employee_id" ref="demo_employee_maria"/>
+        <field name="leave_type_id" ref="leave_type_sick"/>
+        <field name="year">2026</field>
+        <field name="total_days">10</field>
+        <field name="used_days">2</field>
+    </record>
+
+    <record id="demo_leave_balance_maria_casual" model="employee.leave.balance">
+        <field name="employee_id" ref="demo_employee_maria"/>
+        <field name="leave_type_id" ref="leave_type_casual"/>
+        <field name="year">2026</field>
+        <field name="total_days">7</field>
+        <field name="used_days">2</field>
+    </record>
+
+    <record id="demo_leave_balance_tanvir_annual" model="employee.leave.balance">
+        <field name="employee_id" ref="demo_employee_tanvir"/>
+        <field name="leave_type_id" ref="leave_type_annual"/>
+        <field name="year">2026</field>
+        <field name="total_days">20</field>
+        <field name="used_days">0</field>
+    </record>
+
+    <record id="demo_leave_balance_tanvir_sick" model="employee.leave.balance">
+        <field name="employee_id" ref="demo_employee_tanvir"/>
+        <field name="leave_type_id" ref="leave_type_sick"/>
+        <field name="year">2026</field>
+        <field name="total_days">10</field>
+        <field name="used_days">2</field>
+    </record>
+
+    <record id="demo_leave_balance_nusrat_annual" model="employee.leave.balance">
+        <field name="employee_id" ref="demo_employee_nusrat"/>
+        <field name="leave_type_id" ref="leave_type_annual"/>
+        <field name="year">2026</field>
+        <field name="total_days">20</field>
+        <field name="used_days">4</field>
+    </record>
+
+    <record id="demo_leave_balance_rahat_emergency" model="employee.leave.balance">
+        <field name="employee_id" ref="demo_employee_rahat"/>
+        <field name="leave_type_id" ref="leave_type_emergency"/>
+        <field name="year">2026</field>
+        <field name="total_days">5</field>
+        <field name="used_days">0</field>
+    </record>
+
+    <!-- Leave Requests -->
+    <record id="demo_leave_request_draft" model="employee.leave.request">
+        <field name="employee_id" ref="demo_employee_ali"/>
+        <field name="leave_type_id" ref="leave_type_casual"/>
+        <field name="start_date">2026-10-01</field>
+        <field name="end_date">2026-10-02</field>
+        <field name="reason">Family gathering and personal errand.</field>
+        <field name="state">draft</field>
+    </record>
+
+    <record id="demo_leave_request_submitted" model="employee.leave.request">
+        <field name="employee_id" ref="demo_employee_tanvir"/>
+        <field name="leave_type_id" ref="leave_type_annual"/>
+        <field name="start_date">2026-10-10</field>
+        <field name="end_date">2026-10-12</field>
+        <field name="reason">Vacation trip to Cox's Bazar.</field>
+        <field name="state">submitted</field>
+    </record>
+
+    <record id="demo_leave_request_manager_approved" model="employee.leave.request">
+        <field name="employee_id" ref="demo_employee_maria"/>
+        <field name="leave_type_id" ref="leave_type_sick"/>
+        <field name="start_date">2026-09-20</field>
+        <field name="end_date">2026-09-21</field>
+        <field name="reason">Severe fever and doctor appointment.</field>
+        <field name="state">manager_approved</field>
+        <field name="manager_comment">Approved. Get well soon!</field>
+    </record>
+
+    <record id="demo_leave_request_hr_approved" model="employee.leave.request">
+        <field name="employee_id" ref="demo_employee_nusrat"/>
+        <field name="leave_type_id" ref="leave_type_annual"/>
+        <field name="start_date">2026-08-01</field>
+        <field name="end_date">2026-08-04</field>
+        <field name="reason">Annual family vacation.</field>
+        <field name="state">hr_approved</field>
+        <field name="manager_comment">Recommended for approval.</field>
+        <field name="hr_comment">Approved as per leave policy.</field>
+    </record>
+
+    <record id="demo_leave_request_rejected" model="employee.leave.request">
+        <field name="employee_id" ref="demo_employee_rahat"/>
+        <field name="leave_type_id" ref="leave_type_emergency"/>
+        <field name="start_date">2026-09-25</field>
+        <field name="end_date">2026-09-26</field>
+        <field name="reason">Personal emergency work.</field>
+        <field name="state">rejected</field>
+        <field name="manager_comment">Sorry, we have an important client meeting on these dates.</field>
+    </record>
 </odoo>
+

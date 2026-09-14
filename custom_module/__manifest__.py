@@ -9,6 +9,7 @@
     "data": [
         "security/ir.model.access.csv",
         "views/custom_user_data.xml",
+        "views/menus.xml",
     ],
     "installable": True,
     "application": True,

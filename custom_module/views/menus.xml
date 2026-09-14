@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Root Menu (App Switcher / 9-dot launcher) -->
+        <menuitem
+            id="menu_custom_user_root"
+            name="Learning Odoo"
+            sequence="10"
+        />
+
+        <!-- Sub Menu -->
+        <menuitem
+            id="menu_custom_user_data"
+            name="Users"
+            parent="menu_custom_user_root"
+            action="action_custom_user_data"
+            sequence="1"
+        />
+    </data>
+</odoo>

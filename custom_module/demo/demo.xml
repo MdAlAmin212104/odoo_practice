@@ -1,0 +1,85 @@
+<odoo>
+    <data>
+
+        <record id="custom_user_data_1" model="custom.user.data">
+            <field name="name">MD Alamin</field>
+            <field name="email">alamin@gmail.com</field>
+            <field name="age">23</field>
+            <field name="gender">Male</field>
+            <field name="address">Dhaka, Bangladesh</field>
+        </record>
+
+        <record id="custom_user_data_2" model="custom.user.data">
+            <field name="name">Rahim Ahmed</field>
+            <field name="email">rahim@gmail.com</field>
+            <field name="age">27</field>
+            <field name="gender">Male</field>
+            <field name="address">Chattogram, Bangladesh</field>
+        </record>
+
+        <record id="custom_user_data_3" model="custom.user.data">
+            <field name="name">Nusrat Jahan</field>
+            <field name="email">nusrat@gmail.com</field>
+            <field name="age">22</field>
+            <field name="gender">Female</field>
+            <field name="address">Sylhet, Bangladesh</field>
+        </record>
+
+        <record id="custom_user_data_4" model="custom.user.data">
+            <field name="name">Tanvir Hasan</field>
+            <field name="email">tanvir@gmail.com</field>
+            <field name="age">30</field>
+            <field name="gender">Male</field>
+            <field name="address">Rajshahi, Bangladesh</field>
+        </record>
+
+        <record id="custom_user_data_5" model="custom.user.data">
+            <field name="name">Sumaiya Akter</field>
+            <field name="email">sumaiya@gmail.com</field>
+            <field name="age">25</field>
+            <field name="gender">Female</field>
+            <field name="address">Khulna, Bangladesh</field>
+        </record>
+
+        <record id="custom_user_data_6" model="custom.user.data">
+            <field name="name">Sakib Hossain</field>
+            <field name="email">sakib@gmail.com</field>
+            <field name="age">28</field>
+            <field name="gender">Male</field>
+            <field name="address">Cumilla, Bangladesh</field>
+        </record>
+
+        <record id="custom_user_data_7" model="custom.user.data">
+            <field name="name">Mim Islam</field>
+            <field name="email">mim@gmail.com</field>
+            <field name="age">21</field>
+            <field name="gender">Female</field>
+            <field name="address">Barishal, Bangladesh</field>
+        </record>
+
+        <record id="custom_user_data_8" model="custom.user.data">
+            <field name="name">Arif Khan</field>
+            <field name="email">arif@gmail.com</field>
+            <field name="age">32</field>
+            <field name="gender">Male</field>
+            <field name="address">Gazipur, Bangladesh</field>
+        </record>
+
+        <record id="custom_user_data_9" model="custom.user.data">
+            <field name="name">Jannatul Ferdous</field>
+            <field name="email">jannatul@gmail.com</field>
+            <field name="age">26</field>
+            <field name="gender">Female</field>
+            <field name="address">Narayanganj, Bangladesh</field>
+        </record>
+
+        <record id="custom_user_data_10" model="custom.user.data">
+            <field name="name">Fahim Ahmed</field>
+            <field name="email">fahim@gmail.com</field>
+            <field name="age">29</field>
+            <field name="gender">Male</field>
+            <field name="address">Mymensingh, Bangladesh</field>
+        </record>
+
+    </data>
+</odoo>

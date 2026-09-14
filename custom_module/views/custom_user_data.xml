@@ -11,6 +11,9 @@
                         <group>
                             <field name="name"/>
                             <field name="email"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <field name="address"/>
                         </group>
                     </sheet>
                 </form>
@@ -25,6 +28,9 @@
                 <list>
                     <field name="name"/>
                     <field name="email"/>
+                    <field name="age"/>
+                    <field name="gender"/>
+                    <field name="address"/>
                 </list>
             </field>
         </record>

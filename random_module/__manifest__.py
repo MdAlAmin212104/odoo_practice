@@ -3,6 +3,7 @@
     "summary": "A simple random Odoo module for learning",
     "version": "19.0.1.0.0",
     "license": "OEEL-1",
+    "author": "MD Alamin",
     "depends": ["base"],
     "data": [
         "security/ir.model.access.csv",

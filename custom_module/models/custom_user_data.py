@@ -7,3 +7,6 @@ class CustomUserData(models.Model):
 
     name = fields.Char(string="Name", required=True)
     email = fields.Char(string="Email")
+    age = fields.Char(string="Age")
+    gender = fields.Char(string="Gender")
+    address = fields.Char(string="Address")

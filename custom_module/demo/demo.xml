@@ -1,84 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
 
         <record id="custom_user_data_1" model="custom.user.data">
-            <field name="name">MD Alamin</field>
-            <field name="email">alamin@gmail.com</field>
-            <field name="age">23</field>
-            <field name="gender">Male</field>
-            <field name="address">Dhaka, Bangladesh</field>
+            <field name="name">Modern Villa in Gulshan</field>
+            <field name="property_type">villa</field>
+            <field name="postcode">1212</field>
+            <field name="date_avilability">2026-10-01</field>
+            <field name="expected_price">25000000</field>
+            <field name="best_Offer">24000000</field>
+            <field name="selling_price">24500000</field>
+            <field name="state">accepted</field>
+            <field name="bedrooms">5</field>
+            <field name="living_areas">350</field>
+            <field name="facades">4</field>
+            <field name="garage_area">50</field>
+            <field name="Total_area">400</field>
+            <field name="garden">True</field>
+            <field name="garden_orientation">south</field>
+            <field name="description">A luxurious 5-bedroom villa with modern interior design, private garden and spacious parking in Gulshan 2.</field>
         </record>
 
         <record id="custom_user_data_2" model="custom.user.data">
-            <field name="name">Rahim Ahmed</field>
-            <field name="email">rahim@gmail.com</field>
-            <field name="age">27</field>
-            <field name="gender">Male</field>
-            <field name="address">Chattogram, Bangladesh</field>
+            <field name="name">Luxury Apartment in Banani</field>
+            <field name="property_type">apartment</field>
+            <field name="postcode">1213</field>
+            <field name="date_avilability">2026-09-20</field>
+            <field name="expected_price">18000000</field>
+            <field name="best_Offer">17500000</field>
+            <field name="selling_price">0</field>
+            <field name="state">recieved</field>
+            <field name="bedrooms">3</field>
+            <field name="living_areas">220</field>
+            <field name="facades">2</field>
+            <field name="garage_area">25</field>
+            <field name="Total_area">245</field>
+            <field name="garden">False</field>
+            <field name="description">Premium 3-bedroom apartment with South-facing view and modern amenities in Banani Block 11.</field>
         </record>
 
         <record id="custom_user_data_3" model="custom.user.data">
-            <field name="name">Nusrat Jahan</field>
-            <field name="email">nusrat@gmail.com</field>
-            <field name="age">22</field>
-            <field name="gender">Female</field>
-            <field name="address">Sylhet, Bangladesh</field>
+            <field name="name">Cozy Duplex House in Uttara</field>
+            <field name="property_type">house</field>
+            <field name="postcode">1230</field>
+            <field name="date_avilability">2026-11-01</field>
+            <field name="expected_price">15000000</field>
+            <field name="best_Offer">0</field>
+            <field name="selling_price">0</field>
+            <field name="state">new</field>
+            <field name="bedrooms">4</field>
+            <field name="living_areas">280</field>
+            <field name="facades">3</field>
+            <field name="garage_area">30</field>
+            <field name="Total_area">310</field>
+            <field name="garden">True</field>
+            <field name="garden_orientation">east</field>
+            <field name="description">Beautiful duplex family house in Sector 4 Uttara with private roof garden and garage.</field>
         </record>
 
         <record id="custom_user_data_4" model="custom.user.data">
-            <field name="name">Tanvir Hasan</field>
-            <field name="email">tanvir@gmail.com</field>
-            <field name="age">30</field>
-            <field name="gender">Male</field>
-            <field name="address">Rajshahi, Bangladesh</field>
+            <field name="name">Studio Townhouse in Dhanmondi</field>
+            <field name="property_type">townhouse</field>
+            <field name="postcode">1209</field>
+            <field name="date_avilability">2026-08-15</field>
+            <field name="expected_price">12000000</field>
+            <field name="best_Offer">11800000</field>
+            <field name="selling_price">11900000</field>
+            <field name="state">sold</field>
+            <field name="bedrooms">2</field>
+            <field name="living_areas">150</field>
+            <field name="facades">2</field>
+            <field name="garage_area">20</field>
+            <field name="Total_area">170</field>
+            <field name="garden">True</field>
+            <field name="garden_orientation">north</field>
+            <field name="description">Charming 2-bedroom townhouse near Dhanmondi lake with quiet peaceful surroundings.</field>
         </record>
 
         <record id="custom_user_data_5" model="custom.user.data">
-            <field name="name">Sumaiya Akter</field>
-            <field name="email">sumaiya@gmail.com</field>
-            <field name="age">25</field>
-            <field name="gender">Female</field>
-            <field name="address">Khulna, Bangladesh</field>
-        </record>
-
-        <record id="custom_user_data_6" model="custom.user.data">
-            <field name="name">Sakib Hossain</field>
-            <field name="email">sakib@gmail.com</field>
-            <field name="age">28</field>
-            <field name="gender">Male</field>
-            <field name="address">Cumilla, Bangladesh</field>
-        </record>
-
-        <record id="custom_user_data_7" model="custom.user.data">
-            <field name="name">Mim Islam</field>
-            <field name="email">mim@gmail.com</field>
-            <field name="age">21</field>
-            <field name="gender">Female</field>
-            <field name="address">Barishal, Bangladesh</field>
-        </record>
-
-        <record id="custom_user_data_8" model="custom.user.data">
-            <field name="name">Arif Khan</field>
-            <field name="email">arif@gmail.com</field>
-            <field name="age">32</field>
-            <field name="gender">Male</field>
-            <field name="address">Gazipur, Bangladesh</field>
-        </record>
-
-        <record id="custom_user_data_9" model="custom.user.data">
-            <field name="name">Jannatul Ferdous</field>
-            <field name="email">jannatul@gmail.com</field>
-            <field name="age">26</field>
-            <field name="gender">Female</field>
-            <field name="address">Narayanganj, Bangladesh</field>
-        </record>
-
-        <record id="custom_user_data_10" model="custom.user.data">
-            <field name="name">Fahim Ahmed</field>
-            <field name="email">fahim@gmail.com</field>
-            <field name="age">29</field>
-            <field name="gender">Male</field>
-            <field name="address">Mymensingh, Bangladesh</field>
+            <field name="name">Executive Apartment in Mirpur DOHS</field>
+            <field name="property_type">apartment</field>
+            <field name="postcode">1216</field>
+            <field name="date_avilability">2026-10-15</field>
+            <field name="expected_price">13500000</field>
+            <field name="best_Offer">13000000</field>
+            <field name="selling_price">0</field>
+            <field name="state">new</field>
+            <field name="bedrooms">3</field>
+            <field name="living_areas">190</field>
+            <field name="facades">2</field>
+            <field name="garage_area">20</field>
+            <field name="Total_area">210</field>
+            <field name="garden">False</field>
+            <field name="description">Secured 3-bedroom executive flat in Mirpur DOHS with 24/7 power backup and security.</field>
         </record>
 
     </data>

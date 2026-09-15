@@ -6,32 +6,97 @@
             <field name="name">custom.user.data.form.view</field>
             <field name="model">custom.user.data</field>
             <field name="arch" type="xml">
-                <form>
+                <form string="Custom User Data">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="new,recieved,accepted,sold,cancelled"/>
+                    </header>
                     <sheet>
+                        <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Property Title / Name"/>
+                            </h1>
+                        </div>
                         <group>
-                            <field name="name"/>
-                            <field name="email"/>
-                            <field name="age"/>
-                            <field name="gender"/>
-                            <field name="address"/>
+                            <group>
+                                <field name="property_type"/>
+                                <field name="postcode"/>
+                                <field name="date_avilability"/>
+                            </group>
+                            <group>
+                                <field name="expected_price"/>
+                                <field name="best_Offer"/>
+                                <field name="selling_price"/>
+                                <field name="active" invisible="1"/>
+                            </group>
                         </group>
+                        <notebook>
+                            <page string="Description">
+                                <group>
+                                    <field name="description" placeholder="Enter detailed description..."/>
+                                </group>
+                            </page>
+                            <page string="Property Details">
+                                <group>
+                                    <group>
+                                        <field name="bedrooms"/>
+                                        <field name="living_areas"/>
+                                        <field name="facades"/>
+                                        <field name="garage_area"/>
+                                    </group>
+                                    <group>
+                                        <field name="Total_area"/>
+                                        <field name="garden"/>
+                                        <field name="garden_orientation" invisible="not garden"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
         </record>
 
-        <!-- List View -->
+        <!-- List / Tree View -->
         <record id="view_custom_user_data_tree" model="ir.ui.view">
-            <field name="name">custom.user.data.tree.view</field>
+            <field name="name">custom.user.data.list.view</field>
             <field name="model">custom.user.data</field>
             <field name="arch" type="xml">
-                <list>
+                <list string="Custom User Data">
                     <field name="name"/>
-                    <field name="email"/>
-                    <field name="age"/>
-                    <field name="gender"/>
-                    <field name="address"/>
+                    <field name="property_type"/>
+                    <field name="postcode"/>
+                    <field name="bedrooms"/>
+                    <field name="living_areas"/>
+                    <field name="expected_price"/>
+                    <field name="selling_price"/>
+                    <field name="state" widget="badge"/>
                 </list>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_custom_user_data_search" model="ir.ui.view">
+            <field name="name">custom.user.data.search.view</field>
+            <field name="model">custom.user.data</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="postcode"/>
+                    <field name="property_type"/>
+                    <separator/>
+                    <filter string="New" name="filter_new" domain="[('state', '=', 'new')]"/>
+                    <filter string="Offer Received" name="filter_recieved" domain="[('state', '=', 'recieved')]"/>
+                    <filter string="Offer Accepted" name="filter_accepted" domain="[('state', '=', 'accepted')]"/>
+                    <filter string="Sold" name="filter_sold" domain="[('state', '=', 'sold')]"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <group>
+                        <filter string="Property Type" name="groupby_property_type" context="{'group_by': 'property_type'}"/>
+                        <filter string="State" name="groupby_state" context="{'group_by': 'state'}"/>
+                        <filter string="Garden Orientation" name="groupby_garden_orientation" context="{'group_by': 'garden_orientation'}"/>
+                    </group>
+                </search>
             </field>
         </record>
 
@@ -40,6 +105,12 @@
             <field name="name">Custom User Data</field>
             <field name="res_model">custom.user.data</field>
             <field name="view_mode">list,form</field>
+            <field name="search_view_id" ref="view_custom_user_data_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new property record!
+                </p>
+            </field>
         </record>
     </data>
 </odoo>
